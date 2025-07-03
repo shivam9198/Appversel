@@ -48,7 +48,7 @@ An interactive dashboard where a Team Lead can manage members, assign tasks, mon
 ---
 
 ## 📂 Folder Structure
-``` Appversel/ ├── public/ ├── src/ │ ├── components/ │ │ ├── Header.jsx │ │ ├── StatusPieChart.jsx │ │ ├── TeamLeadDashboard.jsx │ │ └── TeamMemberDashboard.jsx │ ├── utils/ │ │ ├── Appstore.js │ │ ├── memberSlice.js │ │ └── roleSlice.js │ ├── App.jsx │ ├── index.css │ └── main.jsx ├── index.html ├── README.md ├── tailwind.config.js ├── vite.config.js ``` 
+![alt text](image.png)
 
 ##  Installation
 ```bash
