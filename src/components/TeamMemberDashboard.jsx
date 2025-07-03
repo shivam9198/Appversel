@@ -16,7 +16,6 @@ function TeamMemberDashboard() {
     <div className="p-4 space-y-6">
       <h2 className="text-2xl font-bold">Welcome, {member.name}</h2>
 
-      {/* 🔄 Status Selector */}
       <div className="flex gap-3 flex-wrap">
         {statuses.map((status) => (
           <button
@@ -33,7 +32,7 @@ function TeamMemberDashboard() {
         ))}
       </div>
 
-      {/* 📋 Task List */}
+   
       <div className="space-y-4">
         <h3 className="text-xl font-semibold">Your Tasks</h3>
         {member.tasks.length === 0 ? (
@@ -47,7 +46,7 @@ function TeamMemberDashboard() {
               <p className="font-semibold">{task.title}</p>
               <p className="text-sm text-gray-600">Due: {task.dueDate}</p>
 
-              {/* Progress Bar */}
+          
               <div className="w-full bg-gray-200 h-4 rounded overflow-hidden">
                 <div
                   className={`h-full ${
@@ -59,7 +58,7 @@ function TeamMemberDashboard() {
 
               <p className="text-sm">Progress: {task.progress}%</p>
 
-              {/* Progress Buttons */}
+         
               <div className="flex gap-2">
                 <button
                   onClick={() =>

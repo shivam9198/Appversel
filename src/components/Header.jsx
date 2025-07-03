@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { switchRole } from '../utils/roleSlice';
 
-function Header() {
+function Header({ darkMode, setDarkMode }) {
   const { currentRole, currentUser } = useSelector((state) => state.role);
   const dispatch = useDispatch();
 
@@ -21,6 +21,12 @@ function Header() {
           className="px-4 py-1 bg-blue-600 hover:bg-blue-500 rounded"
         >
           Switch to {currentRole === 'lead' ? 'Member' : 'Lead'}
+        </button>
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="px-4 py-1 bg-gray-700 text-white rounded"
+        >
+          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </button>
       </div>
     </div>

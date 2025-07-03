@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// 🔄 Async thunk to fetch random users
+
 export const fetchMembers = createAsyncThunk('members/fetchMembers', async () => {
   const res = await axios.get('https://randomuser.me/api/?results=5');
   return res.data.results.map((user) => ({

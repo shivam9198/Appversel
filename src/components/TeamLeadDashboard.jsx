@@ -13,7 +13,7 @@ function TeamLeadDashboard() {
   const [taskTitle, setTaskTitle] = useState('');
   const [dueDate, setDueDate] = useState('');
 
-  // Filter + sort
+ 
   const filteredMembers = members
     .filter((m) => filterStatus === 'All' || m.status === filterStatus)
     .sort((a, b) =>
@@ -23,7 +23,7 @@ function TeamLeadDashboard() {
         : 0
     );
 
-  // Assign task
+
   const handleAssign = (e) => {
     e.preventDefault();
     if (!selectedId || !taskTitle || !dueDate) return;
@@ -41,12 +41,12 @@ function TeamLeadDashboard() {
   }, {});
 
   return (
-    <div className="p-4 space-y-6">
-      <h2 className="text-2xl font-bold mb-4">Team Lead Dashboard</h2>
+    <div className="p-4 space-y-6 text-black ">
+      <h2 className="text-2xl text--black dark:text-white font-bold mb-4">Team Lead Dashboard</h2>
       
 
-      {/* 🔢 Status Summary */}
-      <div className="bg-white p-4 shadow rounded">
+   
+      <div className="bg-white dark:bg-gray-300 p-4 shadow rounded">
         <p className="font-semibold">Status Summary:</p>
         <p className="text-sm text-gray-700">
           {Object.entries(statusCount).map(([status, count]) => (
@@ -57,12 +57,12 @@ function TeamLeadDashboard() {
         </p>
       </div>
 
-      {/* 🔍 Filter & Sort */}
-      <div className="flex gap-4 items-center">
+   
+      <div className="flex gap-4 items-center  ">
         <select
           value={filterStatus}
           onChange={(e) => setFilterStatus(e.target.value)}
-          className="p-2 border rounded"
+          className="p-2 border rounded dark:bg-gray-300"
         >
           <option>All</option>
           <option>Working</option>
@@ -78,12 +78,11 @@ function TeamLeadDashboard() {
         </button>
       </div>
 
-      {/* 👥 Member Cards */}
       <div className="grid gap-4  md:grid-cols-2">
         {filteredMembers.map((member) => (
           <div
             key={member.id}
-            className="bg-white p-4 shadow rounded border-l-4 border-blue-500"
+            className="bg-white dark:bg-gray-300 p-4 shadow rounded border-l-4 border-blue-500"
           >
             <p className="font-semibold">{member.name}</p>
             <p className="text-sm text-gray-600">Status: {member.status}</p>
@@ -94,11 +93,11 @@ function TeamLeadDashboard() {
         ))}
       </div>
 
-      {/* 📝 Assign Task Form */}
+
       <div className='flex justify-between'>
       <form
         onSubmit={handleAssign}
-        className="bg-white p-4 shadow rounded w-[50%] space-y-4"
+        className="bg-white dark:bg-gray-300 p-4 shadow rounded w-[50%] space-y-4"
       >
         <h3 className="font-semibold text-lg">Assign New Task</h3>
         <select
@@ -133,7 +132,7 @@ function TeamLeadDashboard() {
           Assign Task
         </button>
       </form>
-    <div className="bg-white shadow rounded p-4 w-full md:w-1/2 max-w-[300px] mx-auto ">
+    <div className="bg-white  shadow rounded p-4 w-full md:w-1/2 max-w-[300px] mx-auto ">
     <StatusPieChart />
   </div>
       </div>

@@ -7,7 +7,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 function StatusPieChart() {
   const members = useSelector((state) => state.members.list);
 
-  // Count status
+
   const statusCount = members.reduce((acc, m) => {
     acc[m.status] = (acc[m.status] || 0) + 1;
     return acc;
