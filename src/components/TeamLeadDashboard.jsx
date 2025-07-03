@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { assignTask } from '../utils/memberSlice';
+import StatusPieChart from './StatusPieChart';
 
 function TeamLeadDashboard() {
   const members = useSelector((state) => state.members.list);
@@ -42,6 +43,7 @@ function TeamLeadDashboard() {
   return (
     <div className="p-4 space-y-6">
       <h2 className="text-2xl font-bold mb-4">Team Lead Dashboard</h2>
+      
 
       {/* 🔢 Status Summary */}
       <div className="bg-white p-4 shadow rounded">
@@ -93,6 +95,7 @@ function TeamLeadDashboard() {
       </div>
 
       {/* 📝 Assign Task Form */}
+      <div className='flex justify-between'>
       <form
         onSubmit={handleAssign}
         className="bg-white p-4 shadow rounded w-[50%] space-y-4"
@@ -130,6 +133,10 @@ function TeamLeadDashboard() {
           Assign Task
         </button>
       </form>
+    <div className="bg-white shadow rounded p-4 w-full md:w-1/2 max-w-[300px] mx-auto ">
+    <StatusPieChart />
+  </div>
+      </div>
     </div>
   );
 }
